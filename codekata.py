@@ -17,3 +17,10 @@ def solution(arr, divisor):
     # -1 을 반환해라
     return sorted(answer)
     # aswer를 반환할때는 오름 차순으로 반환해라
+
+
+# arr = [1, 2, 3, 4, 5, 6, 7, 8]
+# divisor = 2
+
+# result = solution(arr, divisor)
+# print(result)
