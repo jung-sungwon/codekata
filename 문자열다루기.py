@@ -3,15 +3,27 @@
 # 예를 들어 s가 "a234"이면 False를 리턴하고
 # "1234"라면 True를 리턴하면 됩니다.
 
+# 길이를 확인하는 len 함수 사용 4또는 6의 길이가 맞는지 확인
+# 문자열이 숫자로만 구성되어있는지 확인 하기 위해 s.isdigit() 사용
+# 모든게 맞다면 True 아니라면 False
+
 def solution(s):
-    # 길이를 확인하는 len 함수 사용 4또는 6의 길이가 맞는지 확인
-    # 문자열이 숫자로만 구성되어있는지 확인 하기 위해 s.isdigit() 사용
-    # 모든게 맞다면 True 아니라면 False 
-    if (len(s)==4 or len(s)==6) and s.isdigit():
-        return True
-    else:
-        return False
+    # ==================================
+    # 숫자만 있는지 확인 하는 함수 isnumeric 을 알게 되어 사용했다
+    # for i in s:
+    #     if not i.isnumeric():
+    #         return False
+    # return True
+    # ==================================
+    # 그런데 생각해 보니 굳이 for 문 안돌려도 되지않을까 싶어 해보았다
+    # 잘 된다 그런데 결과를 확인 하면 한두개씩 실패가 뜬다
+    # 문제를 잘 읽어보니 s의 길이도 확인해야 한다 길이가 4 또는 6 이여야 한다 그것도 확인해야한다
+    # return s.isnumeric()
+    # ==================================
+    return (len(s) == 4 or len(s) == 6) and s.isnumeric()
+    # 최종 답안 이다 len을 사용해서 s 의 길이를 확인한다
+    # 4 또는 6 길이가 맞고 숫자가 맞으면 True 를 반환한다
+    # 길이가 4또는6 이 아니고 숫자가 아닌 다른게 섞여있으면 False 반환한다
 
-
-s = 'asdd'
+s = '2233'
 print(solution(s))
